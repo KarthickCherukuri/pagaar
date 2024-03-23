@@ -1,6 +1,7 @@
 import { useState } from "react";
 import {
   Dimensions,
+  Image,
   StyleSheet,
   TextInput,
   TouchableOpacity,
@@ -25,13 +26,16 @@ const Searchbar = () => {
             placeholderTextColor="black"
             style={{
               fontSize: 17,
-              width: 240,
+              width: 235,
               overflow: "hidden",
             }}
           />
         </View>
         <TouchableOpacity style={styles.filterButton}>
-          <Filter name="filter" size={20} color="black" />
+          <Image
+            source={require("../assets/Filter.png")}
+            style={{ width: 28, height: 28 }}
+          />
         </TouchableOpacity>
       </View>
     </View>

@@ -7,14 +7,18 @@ const Greeting = () => {
         <Text style={styles.text}>Hello</Text>
         <Text
           style={{
-            color: "rgb(35,44,93)",
+            color: "#232C5D",
             fontWeight: "bold",
-            ...styles.text,
+            fontSize: 24.62,
+            fontFamily: "urbanist",
           }}>
           Pratik.👋
         </Text>
       </View>
-      <Image source={require("../assets/logo.png")} />
+      <Image
+        source={require("../assets/logo.png")}
+        style={{ width: 63, height: 63 }}
+      />
     </View>
   );
 };
@@ -29,6 +33,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 24,
+    fontWeight: "400",
   },
 });
 

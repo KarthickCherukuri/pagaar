@@ -5,6 +5,7 @@ import {
   Text,
   ScrollView,
   TouchableOpacity,
+  Image,
 } from "react-native";
 import Check from "react-native-vector-icons/AntDesign";
 const suggestionsList = ["All", "Design", "Product", "Tech"];
@@ -19,8 +20,13 @@ const Bubble = ({ text, selected, setSuggestion }) => {
       onPress={() => {
         setSuggestion(text);
       }}>
-      {selected && <Check name="check" />}
-      <Text>{text}</Text>
+      {selected && (
+        <Image
+          source={require("../assets/check.png")}
+          style={{ height: 9.4, width: 12 }}
+        />
+      )}
+      <Text style={{ fontWeight: 400, fontSize: 16 }}>{text}</Text>
     </TouchableOpacity>
   );
 };
@@ -56,13 +62,12 @@ const styles = StyleSheet.create({
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-around",
     padding: 8,
-    borderRadius: 20,
+    borderRadius: 16,
     borderWidth: 1,
-    width: 84,
-    paddingVertical: 12,
-    gap: 10,
+    width: 85.5,
+    height: 43,
   },
   selectedBubble: {
     backgroundColor: "rgb(189,166,253)",

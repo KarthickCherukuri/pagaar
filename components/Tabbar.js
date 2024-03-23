@@ -4,31 +4,41 @@ import {
   Text,
   TouchableOpacity,
   Image,
-  ImageBackground,
+  Dimensions,
 } from "react-native";
-import Home from "react-native-vector-icons/Entypo";
-import User from "react-native-vector-icons/FontAwesome";
-import Clock from "react-native-vector-icons/MaterialIcons";
+import Home from "../assets/home.png";
+import User from "../assets/profile.png";
+import Clock from "../assets/clock.png";
 import { useState } from "react";
-
+const screenWidth = Dimensions.get("window").width;
 const tabs = [
   {
     name: "Home",
-    Icon: Home,
+    Icon: require("../assets/home.png"),
+    IconNotSelected: require("../assets/home-not.png"),
     iconName: "home",
   },
   {
     name: "Alerts",
     iconName: "alarm-on",
-    Icon: Clock,
+    Icon: require("../assets/clock.png"),
+    IconNotSelected: require("../assets/clock-not.png"),
   },
   {
     name: "Profile",
-    Icon: User,
+    Icon: require("../assets/profile.png"),
+    IconNotSelected: require("../assets/profile-not.png"),
     iconName: "user",
   },
 ];
-const TabItems = ({ Icon, name, iconName, selectedTab, setSelectedTab }) => {
+const TabItems = ({
+  Icon,
+  IconNotSelected,
+  name,
+  iconName,
+  selectedTab,
+  setSelectedTab,
+}) => {
   const style =
     selectedTab === iconName
       ? { ...styles.tabItem, ...styles.selectedTab }
@@ -42,10 +52,12 @@ const TabItems = ({ Icon, name, iconName, selectedTab, setSelectedTab }) => {
       }}>
       <>
         <View>
-          <Icon
-            name={iconName}
-            size={24}
-            color={selectedTab !== iconName ? "rgb(199,196,253)" : "black"}
+          <Image
+            source={selectedTab === iconName ? Icon : IconNotSelected}
+            style={{
+              height: selectedTab === iconName ? 36 : 24,
+              width: selectedTab === iconName ? 36 : 24,
+            }}
           />
         </View>
         {name && selectedTab !== iconName && <Text>{name}</Text>}
@@ -78,20 +90,21 @@ const Tabbar = () => {
 
 const styles = StyleSheet.create({
   tabItem: {
-    marginTop: 80,
-    marginRight: 80,
-    height: 60,
-    width: 60,
-    borderRadius: 30,
+    height: 80,
+    width: 80,
+    borderRadius: 80,
     borderWidth: 1,
     borderColor: "rgb(199,196,253)",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "white",
+    left: 16,
   },
   selectedTab: {
     borderWidth: 4,
+    height: 98,
+    width: 98,
     matgin: 98,
     shadowColor: "#000",
     shadowOffset: {
@@ -102,19 +115,22 @@ const styles = StyleSheet.create({
     shadowRadius: 1,
   },
   container: {
-    paddingLeft: 32,
-    paddingRight: 32,
+    // paddingLeft: 32,
+    // paddingRight: 32,
     display: "flex",
     flexDirection: "row",
+    justifyContent: "space-between",
+    width: screenWidth,
+    gap: 54,
 
     zIndex: 1,
     bottom: 0,
     position: "absolute",
-    paddingBottom: 50,
+    paddingBottom: 40,
   },
   backgroundImage: {
     position: "absolute",
-    width: "100%",
+    width: screenWidth,
     alignSelf: "center",
     height: 100,
     bottom: 0,

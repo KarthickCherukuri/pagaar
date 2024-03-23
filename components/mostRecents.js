@@ -29,16 +29,26 @@ const Card = ({ index }) => {
         Adobe
       </Text>
       <View style={styles.locationContainer}>
-        <Location name="location" size={28} />
+        <Image
+          source={require("../assets/location.png")}
+          style={{ height: 24, width: 24.96 }}
+        />
         <Text>Pune, Maharastra, India</Text>
       </View>
       <View style={{ ...styles.locationContainer, marginBottom: 24 }}>
-        <Case name="briefcase-outline" size={24} />
+        <Image
+          source={require("../assets/work.png")}
+          style={{ height: 24, width: 24.96 }}
+        />
         <Text>Fresher(0-1)</Text>
       </View>
       {index === 0 ? (
         <TouchableOpacity style={styles.alertButton}>
-          <Clock name="alarm-on" size={30} />
+          <Image
+            source={require("../assets/clock.png")}
+            style={{ height: 36, width: 36 }}
+          />
+
           <Text style={{ fontSize: 16, fontWeight: "bold" }}>Set alert</Text>
         </TouchableOpacity>
       ) : (
@@ -60,6 +70,10 @@ const Card = ({ index }) => {
               justifyContent: "center",
               alignItems: "center",
             }}>
+            <Image
+              source={require("../assets/ligntning.png")}
+              style={{ width: 24, height: 24 }}
+            />
             <Lightning name="bolt-lightning" color="white" size={8} />
           </View>
           <Text style={{ paddingRight: 2 }}>
@@ -74,7 +88,9 @@ const Card = ({ index }) => {
 const MostRecents = () => {
   return (
     <View style={styles.container}>
-      <Text style={{ fontWeight: "bold", fontSize: 15 }}>Most Recent (7)</Text>
+      <Text style={{ fontFamily: "poppins", fontWeight: "bold", fontSize: 20 }}>
+        Most Recent (7)
+      </Text>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         <View style={styles.recentList}>
           {Array.from({ length: 7 }, (_, i) => i).map((each) => (
@@ -110,10 +126,10 @@ const styles = StyleSheet.create({
   },
   card: {
     padding: 16,
-    width: 230,
-    height: 300,
+    width: 247,
+    height: 305,
     borderRadius: 8,
-    borderWidth: 2,
+    borderWidth: 1.5,
     borderRightWidth: 4,
     borderBottomWidth: 4,
   },
@@ -133,6 +149,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginBottom: 8,
+    gap: 8,
   },
   alertButton: {
     backgroundColor: "rgb(199,196,253)",

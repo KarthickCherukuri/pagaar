@@ -37,7 +37,9 @@ const cards = [
 const TopRoles = () => {
   return (
     <View style={styles.constainer}>
-      <Text style={{ fontWeight: "bold", fontSize: 15 }}>Top Roles</Text>
+      <Text style={{ fontWeight: "bold", fontSize: 20, fontFamily: "poppins" }}>
+        Top Roles
+      </Text>
       <View style={styles.cardsList}>
         {cards.map((each) => (
           <Card {...each} id={each.color} />
@@ -53,7 +55,7 @@ const TopRoles = () => {
           borderRightWidth: 4,
           borderBottomWidth: 4,
           paddingVertical: 24,
-          marginBottom: 80,
+          marginBottom: 100,
           borderRadius: 10,
         }}>
         <Text style={{ textAlign: "center", fontWeight: "bold" }}>
@@ -73,7 +75,7 @@ const styles = StyleSheet.create({
     padding: 22.5,
     width: 170,
     marginBottom: 3,
-    borderRadius: 9,
+    borderRadius: 8,
     borderWidth: 1,
     borderBlockColor: "black",
     borderRightWidth: 4,

@@ -6,10 +6,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import Location from "react-native-vector-icons/EvilIcons";
-import Case from "react-native-vector-icons/MaterialCommunityIcons";
-import Clock from "react-native-vector-icons/MaterialIcons";
-import Lightning from "react-native-vector-icons/FontAwesome6";
+
 const Card = ({ index }) => {
   return (
     <View style={styles.card}>
@@ -74,7 +71,6 @@ const Card = ({ index }) => {
               source={require("../assets/ligntning.png")}
               style={{ width: 24, height: 24 }}
             />
-            <Lightning name="bolt-lightning" color="white" size={8} />
           </View>
           <Text style={{ paddingRight: 2 }}>
             Alert has been posted for this profile.
@@ -127,7 +123,7 @@ const styles = StyleSheet.create({
   card: {
     padding: 16,
     width: 247,
-    height: 305,
+    height: 310,
     borderRadius: 8,
     borderWidth: 1.5,
     borderRightWidth: 4,

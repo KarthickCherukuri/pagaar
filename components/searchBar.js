@@ -8,10 +8,9 @@ import {
   View,
 } from "react-native";
 import MagnifyingGlass from "react-native-vector-icons/SimpleLineIcons";
-import Filter from "react-native-vector-icons/AntDesign";
 
 const screenWidth = Dimensions.get("window").width;
-//magnifier filter
+
 const Searchbar = () => {
   const [query, setQuery] = useState("");
   return (
@@ -60,7 +59,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     paddingLeft: 16,
     paddingVertical: 16,
-    // paddingRight: 76,
   },
   filterButton: {
     justifyContent: "center",
@@ -71,7 +69,7 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     position: "absolute",
-    // top: 0,
+
     left: 0,
     bottom: 0,
     right: 0,
